@@ -1,32 +1,44 @@
 #include <iostream>
 using namespace std;
 
-struct detailAlamat
-{
+struct detailAlamat {
     string desa;
     string kota;
 };
 
-struct mahasiswa
-{
+struct mahasiswa {
     string nim;
     string nama;
-    string alamat;
+    detailAlamat alamat;
 };
 
-int main(){
+int main() {
     mahasiswa mhs[2];
 
-    for (int i = 0; i < 2; i++){
-        cout << "Mahasiswa ke -" << i+1 << endl;
+    // Input data mahasiswa
+    for (int i = 0; i < 2; i++) {
+        cout << "Mahasiswa ke-" << i + 1 << endl;
         cout << "Masukkan NIM = ";
-        cin >> mhs[1].nim;
-        cin.ignore();
+        cin >> mhs[i].nim;
+        cin.ignore(); // Menghindari masalah getline setelah cin
         cout << "Masukkan nama = ";
-        getline(cin , mhs[1],nama);
-        cout << "masukkan alamat desa = ";
-        cin >> mhs[1].alamat.desa;
+        getline(cin, mhs[i].nama);
+        cout << "Masukkan alamat desa = ";
+        cin >> mhs[i].alamat.desa;
         cout << "Masukkan alamat kota = ";
-        cin >> mhs[1].alamat.kota
-
+        cin >> mhs[i].alamat.kota;
+        cout << endl;
     }
+
+    // Menampilkan data mahasiswa
+    for (int i = 0; i < 2; i++) {
+        cout << "Mahasiswa ke-" << i + 1 << endl;
+        cout << "NIM   = " << mhs[i].nim << endl;
+        cout << "Nama  = " << mhs[i].nama << endl;
+        cout << "Desa  = " << mhs[i].alamat.desa << endl;
+        cout << "Kota  = " << mhs[i].alamat.kota << endl;
+        cout << endl;
+    }
+
+ 
+}
